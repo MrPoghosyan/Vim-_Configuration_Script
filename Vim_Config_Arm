@@ -41,7 +41,13 @@ set fileencoding=utf-8
 set number
 
 " Սինտաքսի ընդգծում
-syntax enable
+" syntax enable
+" syntax on
+" filetype plugin indent on
+" Խորացված ընդգծում սինտաքսի, կլոնավորել ու տեղադերել
+" igit clone https://github.com/sheerun/vim-polyglot ~/.vim/pack/plugins/start/vim-polyglot
+set runtimepath+=~/.vim/pack/plugins/start/vim-polyglot
+
 
 " Ֆայլի տեսակի ավտոմատ որոշում
 filetype on
