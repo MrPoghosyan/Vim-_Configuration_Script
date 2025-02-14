@@ -1,0 +1,62 @@
+" Մկնիկի կարգավորում
+set mouse=a
+
+" ✅կարգավորում
+"inoremap <C-g><C-h> <C-v>u2713  " Վերադարձնում է ✔ (նշան)
+"inoremap <C-g><C-j> <C-v>u2705  " Վերադարձնում է ✅ (կանաչ նշան)
+let g:tick_switch = 0
+inoremap <C-g> <C-r>=TickToggle()<CR>
+
+function! TickToggle()
+  let g:tick_switch = !g:tick_switch
+  return g:tick_switch ? "\u2713" : "\u2705"
+endfunction
+
+
+" Ի հավելություն իրական տաբուլյացիայի (ոչ տարածքների)
+set noexpandtab     " Անջատում է տաբուլյացիայի փոխակերպումը տարածքների
+set tabstop=4       " Տաբուլյացիան ցուցադրվում է որպես 4 տարածք
+set shiftwidth=4    " Մուտքային շեղման չափը
+set softtabstop=0   " Տաբուլյացիան հեռացնում է մեկ նշան, այլ ոչ տարածքներ
+
+" Ավտոմատ ներմուծում
+set autoindent      " Ակտիվացնում է ավտոմատ ներմուծումը
+
+" Գործողություններ փակագծերի, չակերտների և այլ նշանների համար
+" inoremap < <><Left>
+inoremap {<CR> {<CR>}<Esc>O
+inoremap { {}<Left>
+inoremap " ""<Left>
+inoremap ' ''<Left>
+inoremap [ []<left>
+inoremap ( ()<left>
+
+" Python-ի կարգավորումներ
+
+" UTF-8 կոդավորում
+set encoding=utf-8
+set fileencoding=utf-8
+
+" Գծերի համարների ցուցադրում
+set number
+
+" Սինտաքսի ընդգծում
+syntax enable
+
+" Ֆայլի տեսակի ավտոմատ որոշում
+filetype on
+filetype plugin on
+filetype indent on
+
+" Ավտոմատ կոդի ձևաչափում Python-ի համար
+autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+
+" Ընթացիկ գծի ընդգծում
+" set cursorline   " (Անջատված է, եթե անհրաժեշտ չէ)
+
+" Որոնման կարգավորումներ
+set ignorecase  " Անտեսել մեծատառ/փոքրատառ տարբերությունը որոնման ժամանակ
+set smartcase   " Օգտագործել մեծատառ/փոքրատառ տարբերությունը, եթե որոնումը արվում է մեծատառով
+set hlsearch    " Ընդգծել բոլոր համընկնումները
+set incsearch   " Ընդգծել համընկնումները մուտքագրման ընթացքում
+set showmatch   " Ցուցադրել համընկնումները որոնման հրամանի մուտքագրման ժամանակ
