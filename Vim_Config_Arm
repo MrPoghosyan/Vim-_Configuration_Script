@@ -45,7 +45,7 @@ set number
 " syntax on
 " filetype plugin indent on
 " Խորացված ընդգծում սինտաքսի, կլոնավորել ու տեղադերել
-" igit clone https://github.com/sheerun/vim-polyglot ~/.vim/pack/plugins/start/vim-polyglot
+" git clone https://github.com/sheerun/vim-polyglot ~/.vim/pack/plugins/start/vim-polyglot
 set runtimepath+=~/.vim/pack/plugins/start/vim-polyglot
 
 
